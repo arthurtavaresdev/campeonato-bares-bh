@@ -17,7 +17,7 @@ O projeto valoriza a cultura boêmia mineira com uma pitada de inteligência de 
 
 ## ⚙️ Stack Tecnológica
 
-- PHP 8.4 (Hyperf Framework)
+- PHP 8.3 (Hyperf Framework)
 - Swoole (alta performance assíncrona)
 - PostgreSQL 16
 - Redis 7 (cache, filas)
@@ -29,53 +29,32 @@ O projeto valoriza a cultura boêmia mineira com uma pitada de inteligência de 
 
 ## 🧪 Ambiente de Desenvolvimento
 
-1. **Clone o repositório**
+1. Clone o repositório:
 
 ```bash
 git clone https://github.com/arthurtavaresdev/campeonato-bares-bh.git
 cd campeonato-bares-bh
 ```
 
-2. **Configure as variáveis**
+2. Configure as variáveis:
 
-Copie o `.env.example` para `.env` e ajuste conforme sua necessidade
+Copie o `.env.example` para `.env`
 
-3. **Suba o ambiente com Docker**
+3. Suba com Docker:
 
 ```bash
 docker-compose up -d --build
 ```
 
-4. **Instale as dependências do projeto**
-
-Como o volume do host é montado no container, o comando abaixo deve ser executado **após** a inicialização:
-
-```bash
-docker exec -it hyperf-app composer install
-```
+Acesse: [http://localhost:9501](http://localhost:9501)
 
 ---
 
-## 📈 Ranking e Regras
+## 🧰 Dicas úteis
 
-- Cálculo de score ponderado (média × log das avaliações / total)
-- Regras de promoção/rebaixamento entre Séries A e B
-- Agendamento diário via crontab Hyperf (`0 19 * * *`)
-
----
-
-## 🧰 Comandos úteis
-
-```bash
-# Acessar container
-docker exec -it hyperf-app bash
-
-# Rodar servidor Hyperf
-php bin/hyperf.php start
-
-# Criar tarefa agendada (exemplo)
-php bin/hyperf.php gen:crontab UpdateRankingCrontab
-```
+- Renomeie `composer.json` e `docker-compose.yml` com o nome do seu projeto.
+- Veja os arquivos `config/routes.php` e `app/Controller/IndexController.php` para entender o fluxo HTTP.
+- Customize o conteúdo deste README para refletir sua aplicação.
 
 ---
 
